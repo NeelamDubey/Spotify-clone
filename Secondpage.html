@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./Secondpage.css">
+  <link rel="icon" href="./assets/favicon.png">
+  <script src="./dropdown.js" defer></script>
+
+</head>
+
+
+<body>
+
+  <div id="app" class="d-flex flex-column">
+
+    <div id="principal" class="d-flex">
+
+      <nav id="latNav" class="w-100 pt-1 d-flex flex-column" >
+
+        <!-- Start of logo -->
+
+        <a class="d-flex">
+          <img src="images/img/Spotify logo.png" height="40px" width="140px" style="margin-left: 15px;margin-top: 3px;">
+        </a>
+
+        <!-- End of logo -->
+
+
+
+        <!-- Start of side bar-->
+
+        <ul class="nav flex-column px-2 py-4">
+          <li class="nav-item">
+            <a class="nav-link ativo">
+              <img src="images/img/Home.png" height="20" width="20">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"> 
+              <img src="images/img/Search.png" height="20" width="20">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><img src="images/img/Your library.png"height="20" width="20">Your Library</a>
+          </li>
+        </ul>
+
+        <div id="underList">
+          <button>
+            <div class="plus_bttn">
+              <img src="images/img/plus.png" height="20" width="20">
+            </div>
+            Create Playlist
+          </button>
+
+          <button>
+            <div class="heart_bttn">
+              <img src="images/img/purpleheart.png" height="20" width="20">
+            </div>
+            Liked Songs
+          </button>
+        </div>
+       
+      </nav>
+
+      <!-- End of Install App Button-->
+
+
+      <!-- Main Content -->
+      <div id="feed" class="w-100">
+        <main id="main" class="p-4">
+          
+        </main>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="audioBar" style="display: flex;">
+        <div class="firstelement"><img src="images/1.jpg" height="50px" width="50px"><div class="content"><span style="margin-left: 15px;font-size: 15px;">Dreaming On</span><p style="margin-left: 15px;font-size: 13px;">Neffix</p></div></div>
+        <div class="Secondelement"><img src="images/Rectangle 18.png"  height="7px" width="550px"><img src="images/Rectangle 19.png" height="7px" width="650px"></div>
+        <div></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./assets/favicon.png">
+  <script src="./dropdown.js" defer></script>
+
+</head>
+
+
+<body>
+
+  <div id="app" class="d-flex flex-column">
+
+    <div id="principal" class="d-flex">
+
+      <nav id="latNav" class="w-100 pt-1 d-flex flex-column" >
+
+        <!-- Start of logo -->
+
+        <a class="d-flex">
+          <img src="images/img/Spotify logo.png" height="40px" width="140px" style="margin-left: 15px;margin-top: 3px;">
+        </a>
+
+        <!-- End of logo -->
+
+
+
+        <!-- Start of side bar-->
+
+        <ul class="nav flex-column px-2 py-4">
+          <li class="nav-item">
+            <a class="nav-link ativo">
+              <img src="images/img/Home.png" height="20" width="20">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"> 
+              <img src="images/img/Search.png" height="20" width="20">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><img src="images/img/Your library.png"height="20" width="20">Your Library</a>
+          </li>
+        </ul>
+
+        <div id="underList">
+          <button>
+            <div class="plus_bttn">
+              <img src="images/img/plus.png" height="20" width="20">
+            </div>
+            Create Playlist
+          </button>
+
+          <button>
+            <div class="heart_bttn">
+              <img src="images/img/purpleheart.png" height="20" width="20">
+            </div>
+            Liked Songs
+          </button>
+
+          <button>
+            <div class="hotspot">
+              <img src="images/img/hotspot.png" height="20" width="20">
+            </div>
+            Your Episodes
+          </button>
+        </div>
+
+        <!-- End of side bar-->
+        <div class="list">
+          <ul style="list-style-type: none;padding-left:25px;font-size: 11px;padding-top: 20px;">
+            <li style="line-height: 20px;">FAV</li>
+            <li style="padding-top:5px;line-height: 20px;">Daily Mix 1</li>
+            <li style="padding-top:5px;line-height: 20px;">Discover Weekly</li>
+            <li style="padding-top:5px;line-height: 20px;">Malyalam</li>
+            <li style="padding-top:5px;line-height: 20px;">Dance</li>
+            <li style="padding-top:5px;line-height: 20px;">EDM</li>
+          </ul>
+        </div>
+       
+        <a href="#" id="installApp" class="d-block px-4 py-2">
+          <img src="images/img/download.png" height="20px" width="20px"> Install App
+        </a>
+       
+      </nav>
+
+      <!-- End of Install App Button-->
+
+
+      <!-- Main Content -->
+      <div id="feed" class="w-100">
+
+        <!-- menu superior do conteudo -->
+        <nav id="topNav" class="d-flex justify-content-between align-items-center px-4 py-2">
+
+          <!-- Start of arrows -->
+            <div class="prev-next-buttons">
+              <img src="images/img/backward.png" height="30px" width="30px" style="margin-right: 10px;">
+              <img src="images/img/forward.png" height="30px" width="30px">
+            </div>
+
+          <!-- End of arrows-->
+
+          <div id="btnTopNav" class="d-flex">
+
+            <!-- Start of user profile -->
+            <div class="dropdown ms-3" id="user_bttn">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="imgUsuario bg-secondary" style="margin-right: 5px;">
+                  <img src="images/img/imgs/profile.png" height="30" width="32">
+                  </svg>
+                </div>
+                Neelam dubey              
+              </button>             
+            </div>
+          </div>
+        </nav>
+
+        <!-- End of user profile -->
+
+
+        <!-- feed do conteudo principal -->
+        <main id="main" class="p-4">
+
+          <!-- seção inicial (header) -->
+          <section id="feedHeader">
+
+            <!-- start of greeting -->
+            <h2 class="fw" id="greeting">Good Morning</h2>
+            <!-- end of greeting -->
+
+            <!-- recent playlists -->
+            <ul id="playlistsRecentes" class="mb-5">
+              <li>
+                <img src="images/img/imgs/Purple-big.png" :alt="playlist.nome">
+                <span class="fw-semibold ms-3 me-auto">Liked Songs</span>
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+              </li>
+
+              <li>
+                <img src="images/img/imgs/album art.png" :alt="playlist.nome">
+                <span class="fw-semibold ms-3 me-auto">Neffex Playlist</span>
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+              </li>
+
+              <li>
+                <img src="images/img/imgs/KDA.png" :alt="playlist.nome">
+                <span class="fw-semibold ms-3 me-auto">K/DA</span>
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+              </li>
+
+              <li>
+                <img src="images/img/imgs/man.png" :alt="playlist.nome">
+                <span class="fw-semibold ms-3 me-auto">Dance/Electronix Mix</span>
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                  <path
+                    d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                  </path>
+                </svg>
+                </button>
+              </li>              
+            </ul>
+          </section>
+
+
+
+          <!-- Your top mixes -->
+          <section class="feedPlaylist">
+            <h4 class="mb-3"><a href="#"><b>Shows You Might Like</b></a></h4>
+          <a class="see-all" href="#">SEE-ALL</a>
+            <br>
+            <br>
+            <ul class="playlists">
+              <li>
+                <img src="./assets/7.jpeg">
+                <span>Pop Mix</span>
+                <p><br>SHY Martin, Lauv, Sia and more</p>
+              </li>
+
+              <li>
+                <img src="./assets/8.jpeg">
+                
+                <span>Chill Mix</span>
+                <p><br>Lauv, Oh Wonder, The Chainsmokers and more</p>
+              </li>
+
+              <li>
+                <img src="./assets/9.jpeg">
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+                <span>Moody Mix</span>
+                <p><br>Charlie Puth, Oh Wonder, Alec Benjamin and more</p>
+              </li>
+
+              <li>
+                <img src="./assets/10.jpeg">
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+                <span>Latin Mix</span>
+                <p><br>Timothy Infinite, Shakira and more</p>
+              </li>
+
+              <li>
+                <img src="./assets/11.jpeg">
+                
+                <span>Hindi Mix</span>
+                <p><br>Ritviz, Nuclea, Atif Aslam and more</p>
+              </li>
+
+              <li>
+                <img src="./assets/12.jpeg">
+                
+                <span>2010s Mix</span>
+                <p><br>The Fat Rat, Alan Walker, The Chainsmokers and more</p>
+              </li>
+            </ul>
+          </section>
+
+          <!--recently played-->
+          <section class="feedPlaylist">
+            <h4 class="mb-3"><a href="#">Recently Played</a></h4>
+            <a class="see-all" href="#">SEE-ALL</a>
+            <br>
+            <br>
+            <ul class="playlists">
+              <li>
+                <img src="./assets/1.jpeg">
+                
+                <span>sleep deprived</span>
+                <p><br>i'll tell you a story before it tells itself</p>
+              </li>
+
+              <li>
+                <img src="./assets/2.jpeg">
+              
+                <span>adrenaline rush</span>
+                <p><br>for the night when you've piled up everything and it's deadline tomorrow</p>
+              </li>
+
+              <li>
+                <img src="./assets/3.jpeg">
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+                <span>impulse</span>
+                <p><br>⚠️ the neighbors are gonna call the cops</p>
+              </li>
+
+              <li>
+                <img src="./assets/4.jpeg">
+                
+                <span>sixth gear</span>
+                <p><br>nothings gonna stop me now (lol, idk how to drive yet)</p>
+              </li>
+
+              <li>
+                <img src="./assets/5.jpeg">
+                <button type="button" class="btn me-3"><svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                      d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                    </path>
+                  </svg></button>
+                <span>3:14 am</span>
+                <p><br>and thoughts of past and future kept him awake</p>
+              </li>
+
+              <li>
+                <img src="./assets/6.jpeg">
+               
+                <span>serenity</span>
+                <p><br>is it tears or just the pouring rain?</p>
+              </li>
+            </ul>
+          </section>
+              <!--Popular new releases-->
+        </main>
+      </div>
+    </div>
+    <div class="bottom">
+
+      <!-- ===========Bottom left============== -->
+      <div class="songName">
+          <img src="images/1.jpg" alt="">
+              <div>
+                  <h2>Dreaming On</h2>
+                  <p>NEFFEX</p>
+              </div>
+              &#128154;
+      </div>
+
+      
+      <div class="playControls">
+          <div class="control">
+              <img class="musichov" src="images/img/shuffle.png" alt="shuffle">
+              <img class="musichov" src="images/img/previous.png" alt="backward">
+              <img class="musichov play" src="images/img/gridicons_play.png" height="30px" width="30px" alt="play/pause">
+              <img class="musichov" src="images/img/next.png" alt="forward">
+              <img class="musichov" src="images/img/loop.png" alt="loop">
+          </div>
+          <div class="bar">
+              <p>2:11</p>
+              <img class="music-bar" src="images/img/music-bar.png" alt="">
+              <p>2:42</p>
+          </div>
+          
+      </div>
+
+      <div class="volume">
+          <img class="vol" src="images/img/microphone.png" alt="">
+          <img class="vol" src="images/img/list.png" alt="">
+          <img class="vol" src="images/img/carbon_laptop.png" alt="">
+          <img class="vol" src="images/img/speaker-white.png" alt="">
+          <img src="images/img/volume-bar.png" alt="">
+          <img class="black-spek" src="images/img/strech-speaker.png" alt="">
+      </div>
+
+  </div>
+
+
+<div class="green-notice">
+  <img src="images/img/speaker-black.png" alt="">
+  <h2>Listening on ASUS-ROG-G531GT</h2>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
